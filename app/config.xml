@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="org.rif.literacycentral" version="X" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>app</name>
+    <description>
+        app
+    </description>
+    <author email="email@email.com" href="https://www.jplcreative.com/">
+        JPL Creative
+    </author>
+    <content src="index.html" />
+
+    <!-- define platforms and plugins -->
+    <engine name="ios" spec="~4.3.0" />
+    <engine name="android" spec="~6.2.3" />
+    <plugin name="cordova-plugin-inappbrowser" spec="~1.6.1" />
+    <plugin name="cordova-plugin-statusbar" spec="~2.1.0" />
+    <plugin name="cordova-plugin-whitelist" spec="~1.2.0" />
+    <plugin name="phonegap-plugin-barcodescanner" spec="~6.0.8">
+        <!--
+            This plugin does not properly set this value in the plist file
+            The follow values should be set on the "Info" tab in Xcode
+            * "Privacy - Camera Usage Description" -> "Scan ISBN Barcodes"
+            See http://useyourloaf.com/blog/privacy-settings-in-ios-10/
+        -->
+        <variable name="CAMERA_USAGE_DESCRIPTION" value="Scan ISBN Barcodes" />
+    </plugin>
+    <plugin name="com.bez4pieci.cookies" spec="https://github.com/bez4pieci/Phonegap-Cookies-Plugin.git" />
+
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+
+    <!-- TURN OFF OVERSCROLL/BOUNCE: https://cordova.apache.org/docs/en/4.0.0/config_ref_index.md.html#multi-platform-preferences -->
+    <preference name="DisallowOverscroll" value="true" />
+
+    <!-- STATUS BAR: https://github.com/apache/cordova-plugin-statusbar/blob/master/doc/index.md#preferences -->
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#007DC3" />
+    <preference name="StatusBarStyle" value="lightcontent" />
+
+    <!-- TARGETS FOR BOTH PLATFORMS -->
+    <preference name="target-device" value="handset" />
+    <preference name="orientation" value="portrait" />
+
+    <platform name="android">
+        <hook type="before_build" src="scripts/android/set-build-extras.js" />
+        <hook type="before_build" src="scripts/android/prepare-for-release.js" />
+
+        <allow-intent href="market:*" />
+
+        <!-- ICONS: http://appicontemplate.com/android -->
+
+        <!-- MDPI: Medium Pixel Density - 48px @ 1x -->
+        <icon src="res/android/icons/48.png" width="48" height="48" />
+
+        <!-- HDPI: High Pixel Density - 48px @ 1.5x -->
+        <icon src="res/android/icons/72.png" width="72" height="72" />
+
+        <!-- XHDPI: Extra High Pixel Density - 48px @ 2x -->
+        <icon src="res/android/icons/96.png" width="96" height="96" />
+
+        <!-- XXHDPI: Extra Extra High Pixel Density - 48px @ 3x -->
+        <icon src="res/android/icons/144.png" width="144" height="144" />
+
+        <!-- XXXDPI: Extra Extra Extra High Pixel Density - 48px @ 4x -->
+        <icon src="res/android/icons/192.png" width="192" height="192" />
+
+        <!-- Google Play: 512px @ 1x -->
+        <icon src="res/android/icons/512.png" width="512" height="512" />
+
+        <!-- SPLASH SCREENS -->
+        <splash src="res/android/splash/drawable-land-hdpi.png" density="land-hdpi"/>
+        <splash src="res/android/splash/drawable-land-ldpi.png" density="land-ldpi"/>
+        <splash src="res/android/splash/drawable-land-mdpi.png" density="land-mdpi"/>
+        <splash src="res/android/splash/drawable-land-xhdpi.png" density="land-xhdpi"/>
+        <splash src="res/android/splash/drawable-port-hdpi.png" density="port-hdpi"/>
+        <splash src="res/android/splash/drawable-port-ldpi.png" density="port-ldpi"/>
+        <splash src="res/android/splash/drawable-port-mdpi.png" density="port-mdpi"/>
+        <splash src="res/android/splash/drawable-port-xhdpi.png" density="port-xhdpi"/>
+    </platform>
+
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+
+        <!-- ICONS: https://developer.apple.com/library/ios/qa/qa1686/_index.html#//apple_ref/doc/uid/DTS40009882-CH1-ICONS_FOR_UNIVERSAL_APPS -->
+
+        <!-- App list in iTunes -->
+        <icon src="res/ios/icons/iTunesArtwork.png" width="512" height="512" />
+        <icon src="res/ios/icons/iTunesArtwork@2x.png" width="1024" height="1024" />
+
+        <!-- Home screen on iPhone/iPod Touch -->
+        <icon src="res/ios/icons/Icon-60.png" width="60" height="60" />
+        <icon src="res/ios/icons/Icon-60@2x.png" width="120" height="120" />
+        <icon src="res/ios/icons/Icon-60@3x.png" width="180" height="180" />
+
+        <!-- Home screen on iPad -->
+        <icon src="res/ios/icons/Icon-76.png" width="76" height="76" />
+        <icon src="res/ios/icons/Icon-76@2x.png" width="152" height="152" />
+        <!-- Home screen on iPad (iOS 6.1 and earlier) -->
+        <icon src="res/ios/icons/Icon-72.png" width="72" height="72" />
+        <!-- Home screen on iPad with retina display (iOS 6.1 and earlier) -->
+        <icon src="res/ios/icons/Icon-72@2x.png" width="144" height="144" />
+        <!-- Home screen on iPhone/iPod touch (iOS 6.1 and earlier) -->
+        <icon src="res/ios/icons/Icon.png" width="57" height="57" />
+        <icon src="res/ios/icons/Icon@2x.png" width="114" height="114" />
+
+        <!-- Spotlight -->
+        <icon src="res/ios/icons/Icon-Small-40.png" width="40" height="40" />
+        <icon src="res/ios/icons/Icon-Small-40@2x.png" width="80" height="80" />
+        <icon src="res/ios/icons/Icon-Small-40@3x.png" width="120" height="120" />
+        <!-- Spotlight on iPad (iOS 6.1 and earlier) -->
+        <icon src="res/ios/icons/Icon-Small-50.png" width="50" height="50" />
+        <icon src="res/ios/icons/Icon-Small-50@2x.png" width="100" height="100" />
+
+        <!-- Settings  -->
+        <icon src="res/ios/icons/Icon-Small.png" width="29" height="29" />
+        <icon src="res/ios/icons/Icon-Small@2x.png" width="58" height="58" />
+        <icon src="res/ios/icons/Icon-Small@3x.png" width="87" height="87" />
+
+        <!-- SPLASH SCREENS -->
+        <splash src="res/ios/splash/Default~iphone.png" width="320" height="480"/>
+        <splash src="res/ios/splash/Default@2x~iphone.png" width="640" height="960"/>
+        <splash src="res/ios/splash/Default-Portrait~ipad.png" width="768" height="1024"/>
+        <splash src="res/ios/splash/Default-Portrait@2x~ipad.png" width="1536" height="2048"/>
+        <splash src="res/ios/splash/Default-Landscape~ipad.png" width="1024" height="768"/>
+        <splash src="res/ios/splash/Default-Landscape@2x~ipad.png" width="2048" height="1536"/>
+        <splash src="res/ios/splash/Default-568h@2x~iphone.png" width="640" height="1136"/>
+        <splash src="res/ios/splash/Default-667h.png" width="750" height="1334"/>
+        <splash src="res/ios/splash/Default-736h.png" width="1242" height="2208"/>
+        <splash src="res/ios/splash/Default-Landscape-736h.png" width="2208" height="1242"/>
+
+        <!-- TARGETS -->
+        <preference name="deployment-target" value="8.0" />
+    </platform>
+
+    <hook type="after_prepare" src="scripts/set-versions.js" />
+</widget>

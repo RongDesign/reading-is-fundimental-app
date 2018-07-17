@@ -1,0 +1,32 @@
+{
+  "android": {
+    "files": [
+      {
+        "filename": "platforms/android/res/values/strings.xml",
+        "searchreplace": [
+          {
+            "key": "<string name=\"app_name\">.*?</string>",
+            "value": "<string name=\"app_name\">[APP_NAME]</string>"
+          }
+        ]
+      }
+    ]
+  },
+  "ios": {
+    "files": [
+      {
+        "filename": "platforms/ios/app/app-Info.plist",
+        "searchreplace": [
+          {
+            "key": "<key>CFBundleDisplayName</key>[\\s\\S]*?<string>.*?</string>",
+            "value": "<key>CFBundleDisplayName</key>\n<string>[APP_NAME]</string>"
+          },
+          {
+            "key": "<key>CFBundleName</key>[\\s\\S]*?<string>.*?</string>",
+            "value": "<key>CFBundleName</key>\n<string>[APP_NAME]</string>"
+          }
+        ]
+      }
+    ]
+  }
+}
