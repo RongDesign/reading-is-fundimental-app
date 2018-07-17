@@ -1,0 +1,16 @@
+{
+  "short_name": "RIF",
+  "name": "RIF - Literacy Central",
+  "icons": [
+    {
+      "src": "",
+      "sizes": "",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#2196F3",
+  "theme_color": "#2196F3",
+  "display": "standalone",
+  "orientation": "portrait"
+}

@@ -1,0 +1,69 @@
+<section>
+
+<!--Results -->
+  <div ng-if="results.book">
+    <div class="search-results-wrap">
+      <img class="book-cover" ng-attr-src="{{ results.book.image }}">
+      <div class="view-details-wrap">
+        <button ui-sref="book({ isbn: results.book.isbn })" class="btn btn-green">
+          View Details
+          <span class="fa fa-book"></span>
+        </button>
+      </div>
+
+      <div class="resource-description">
+        <h1 ng-bind-html="results.book.title"></h1>
+        <h2 data-contributors data-authors="results.book.authors" data-illustrators="results.book.illustrators"></h2>
+        <div class="book-lexile">
+          Lexile Level:
+          {{ results.book.lexile }}
+        </div>
+      </div>
+    </div>
+
+    <div class="brand-container">
+      <h3>Not the book you were looking for?</h3>
+      <a ui-sref="scan">Scan Again.</a>
+
+      <related-books data-isbn="results.book.isbn"></related-books>
+
+    </div>
+  </div>
+
+<!--No Results -->
+  <div ng-if="!results.book">
+
+    <div class="search-results-wrap">
+      <div class="book-not-found">
+        <div class="inner">
+          <h1>Sorry, book not found.</h1>
+          <p>We haven’t added this book yet to the Literacy Central collection. But check out these titles below!</p>
+          <button class="btn btn-blue" ui-sref="scan">Search Again <span class="fa fa-barcode"></span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="view-header">
+      <h2 >Suggested For You</h2>
+    </div>
+
+    <ul class="suggestion-list">
+      <li ng-repeat="book in results.suggestions">
+        <a ui-sref="book({isbn:book.isbn})">
+          <div class="book-item flex">
+            <div class="book-image">
+              <img class="img-responsive" ng-src="{{book.image}}" >
+            </div>
+
+            <div class="book-description">
+              <h2 ng-bind-html="book.title"></h2>
+              <h3 data-contributors data-authors="book.authors" data-illustrators="book.illustrators"></h3>
+            </div>
+        </div>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+  <img class="img-responsive" src="lib/img/sponsor-image.png">
+</section>

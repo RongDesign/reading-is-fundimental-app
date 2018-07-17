@@ -1,0 +1,10 @@
+<!-- @@include('lib/inc/header.html') -->
+
+<app-header data-ng-hide="main.hideNav || main.hideHeader" data-title="main.title" data-type="main.headerType || 'navigation'" data-header-class="main.headerClass"></app-header>
+
+<div data-ui-view></div data-ui-view>
+
+<app-footer data-ng-hide="main.hideNav || main.hideFooter"></app-footer>
+
+<div class="preloader"><div class="spinner"></div></div>
+<!-- @@include('lib/inc/footer.html') -->

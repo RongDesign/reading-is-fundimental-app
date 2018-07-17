@@ -1,0 +1,164 @@
+.page-favorites {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  .inner {
+    padding: 20px 0;
+  }
+  &.not-logged-in {
+
+    .icon {
+      padding:50px 0;
+      font-size: 120px;
+      color: #ff480a;
+    }
+    .btn + .btn {
+      margin-left: 25px;
+    }
+  }
+
+  form {
+    padding:0;
+  }
+
+  input[type=text] {
+    .border-radiuses(0, 0, 5px, 5px);
+    border-right: none;
+  }
+
+  .btn-create {
+    height: 35px;
+    .border-radiuses(5px, 5px, 0, 0);
+    padding:0 25px;
+    border:0;
+  }
+
+  .message-maximum-allowed {
+    padding-top:20px;
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 20px;
+    line-height: 1em;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #6c6c6a;
+  }
+
+  .favorites-folder-list {
+    padding-top: 20px;
+    text-align: left;
+
+    .list-folder-item {
+      font-size: 16px;
+      box-shadow: 0 1px 1px rgba(0,0,0,.05);
+      border: 1px solid #b2b2b2;
+      .border-radius(5px);
+      overflow: hidden;
+
+      .item-top {
+        padding:10px 10px;
+      }
+
+      a {
+        font-weight: 500;
+        text-decoration: none;
+      }
+
+      .item-top > span.fa {
+        color: #545454;
+      }
+
+      .item-bottom {
+        background-color: #b2b2b2;
+        color: #454545;
+        font-weight: 700;
+        padding:5px 10px;
+        text-align: right;
+        font-size: 12px;
+      }
+
+      & + .list-folder-item {
+        margin-top: 5px;
+      }
+    }
+
+
+    .folder-name {
+      .flex(1 0);
+    }
+
+  }
+
+}
+
+
+.page-favorites-folder-contents {
+
+  & > .inner {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 20px;
+    line-height: 1em;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #6c6c6a;
+    text-align: left;
+
+    .fa-folder {
+      margin-right: 10px;
+    }
+  }
+
+  .favorites-list > li + li {
+    border-top: 1px solid #e1e1e1;
+  }
+
+  .favorites-item {
+    position:relative;
+    padding: 15px 0;
+
+    .fa-angle-up {
+      display:none;
+    }
+
+    &.expanded {
+      .fa-angle-down {
+        display:none;
+      }
+
+      .fa-angle-up {
+        display:block;
+      }
+    }
+  }
+
+  .expand-arrow {
+    color:#7c7c7c;
+    font-size: 32px;
+    .flex-display(flex);
+    .align-content(center);
+
+    .fa {
+      height: 1em;
+      margin:auto;
+      font-weight: 700;
+    }
+  }
+
+  .cta-remove {
+    position:absolute;
+    top: 15px;
+    right: 2px;
+    font-size: 22px;
+    line-height: 1em;
+    color: #ff480a;
+  }
+
+  .support-materials {
+    margin-top: 15px;
+  }
+}

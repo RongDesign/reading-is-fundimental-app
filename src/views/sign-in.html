@@ -1,0 +1,35 @@
+<section class="page-form">
+  <form name="auth._form" autocorrect="off" autocapitalize="off" ng-submit="auth.signIn()">
+    <h1>Sign In</h1>
+    <hr>
+
+
+    <ul class="input-wrap">
+      <li>
+        <label>Username</label>
+        <input type="text" name="username" ng-model="auth.form.username" ng-disabled="auth.isLoading"></input>
+      </li>
+      <li>
+        <label>Password</label>
+        <input type="password" name="password" ng-model="auth.form.password" ng-disabled="auth.isLoading"></input>
+      </li>
+      <li>
+        <a ng-click="auth.initiateForgotPassword($event)">Forgot Password?</a>
+      </li>
+    </ul>
+    <hr>
+    <div class="btn-wrap">
+      <button class="btn btn-green" type="submit" value="submit" ng-disabled="auth.isLoading || !auth.form.username || !auth.form.password">Sign In<span class="fa fa-arrow-right"></span></button>
+      <a onclick="history.back()" class="btn btn-blue-light">Cancel</a>
+    </div>
+    <ul class="error-messages" ng-show="auth.errors.length">
+      <li ng-repeat="e in auth.errors">
+        {{ e }}
+      </li>
+    </ul>
+
+    <div class="thank-you" ng-if="auth.resetRequestSent">
+      <p>You should receive an email shortly containing a link to reset your password.</p>
+    </div>
+  </form>
+</section>

@@ -1,0 +1,235 @@
+.page-book {
+  .brand-container h4 {
+    margin: 15px 0 25px;
+  }
+}
+
+.row {
+  padding: 15px 30px;
+  margin:0;
+}
+.resource-description {
+  h1 {
+      margin-top:26px;
+      color: #545454;
+      font-size: 20px;
+      font-weight: 700;
+      font-family: "Roboto Slab", serif;
+  }
+
+  h2 {
+    margin: 10px 0;
+    color: #127abe;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 15px;
+    text-align: left;
+    color: #545454;
+    line-height: 1.23em;
+  }
+
+}
+
+.view-details-wrap {
+  background: linear-gradient(#fff 15%, #fdf3d9);
+  .border-radius(6px);
+  padding: 11px;
+}
+
+.view-details-wrap,
+.support-materials {
+  .btn {
+    font-size: 12px;
+    line-height: 18px;
+    padding: 8px 15px;
+
+    .fa {
+      font-size: 18px;
+      vertical-align: middle;
+      margin-left: 8px;
+    }
+  }
+}
+
+.resource-information .panel {
+  margin-top: 15px;
+  .panel-body {
+    padding:0;
+  }
+  .table {
+    margin: 0;
+    border-collapse: inherit;
+    border-spacing: 0;
+    border: none;
+    background-color: #ffffff;
+    .border-radius(4px);
+
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+
+    & > tbody > tr:first-child td {
+      border-top: 0;
+    }
+    & > tbody > tr td {
+      border-color: #d9d9d9;
+      padding: 15px;
+      vertical-align: middle;
+      text-align: left;
+    }
+    & > tbody > tr td:nth-of-type(odd) {
+      background-color: #e6e6e6;
+      text-align: right;
+      font-weight: 700;
+    }
+  }
+}
+
+.field-type-taxonomy-term-reference {
+    text-transform: capitalize;
+}
+
+.view-header {
+  background: #fdf3d9;
+  color: #545454;
+  padding: 16px 24px;
+  margin: 15px 0;
+
+  h2, h3 {
+    font-size: 20px;
+    font-weight: 900;
+    text-align: left;
+
+    @media screen and (max-width: 320px) {
+      font-size: 18px;
+    }
+  }
+}
+
+.support-materials {
+  .view-header {
+    position: relative;
+    margin-left: -30px;
+    margin-right: -30px;
+    .flex-display(flex);
+    .align-items(middle);
+
+    .btn {
+      position:absolute;
+      right:24px;
+      top:8px;
+    }
+  }
+
+  .view-content {
+    text-align: left;
+    border: 1px solid #ededed;
+    .border-radius(4px);
+    .box-shadow(0 1px 1px rgba(0,0,0,.05));
+  }
+
+  .support-material-item {
+    padding: 20px 0 15px;
+
+    .btn {
+      margin-top: 15px;
+      width:100%;
+      text-align: center;
+    }
+  }
+
+  .support-material-item + .support-material-item {
+    border-top: 1px solid #bde1f9;
+  }
+
+  .support-material-item:nth-of-type(even) {
+    background-color: #ebf6fd;
+  }
+
+  .icon {
+    padding: 0 5px 0 15px;
+    text-align: right;
+    color: #075f99;
+
+    .fa {
+      font-size: 30px;
+    }
+  }
+
+  h4 {
+    font-weight: 900;
+    margin-bottom: 5px;
+    color: #075f99;
+  }
+
+  p {
+    color: #545454;
+  }
+
+  .no-support-materials-found {
+    text-align: left;
+    padding: 0 30px;
+  }
+
+}
+
+.related-book {
+  max-width: 400px;
+  position: relative;
+  margin: 0 auto 25px;
+  height: 180px;
+  color: #ffffff;
+  background-color: #383838;
+ .border-radius(4px);
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  overflow: hidden;
+  text-align: left;
+
+  img {
+    width: 100%;
+    height: auto;
+    .border-radiuses(4px, 0, 0, 4px);
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    display: block;
+  }
+
+  .text-information {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background-color: #2b2b2b;
+    .border-radiuses(0, 4px, 4px, 0);
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+
+    .title {
+      font-size: 20px;
+      font-weight: 900;
+      line-height: 26px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      color: #ffffff;
+    }
+
+    .author {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 26px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      color: #ffffff;
+    }
+  }
+}

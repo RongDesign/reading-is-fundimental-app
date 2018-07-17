@@ -1,0 +1,51 @@
+.page-support-material {
+  .button-container {
+    margin-top: 15px;
+    .flex-display(flex);
+    .justify-content(space-between);
+
+    @media screen and (max-width: 400px) {
+      display: block;
+    }
+  }
+  .btn {
+    font-size: 12px;
+    line-height: 18px;
+    padding: 8px 15px;
+
+    .fa {
+      font-size: 18px;
+      vertical-align: middle;
+      margin-left: 8px;
+    }
+
+    @media screen and (max-width: 400px) {
+      width: 100%;
+      text-align: center;
+
+      & + .btn {
+        margin-top: 15px;
+      }
+    }
+  }
+
+
+  h2 {
+    color: #545454;
+    font-size: 20px;
+    font-weight: 900;
+    text-align: left;
+  }
+  p {
+    margin-top: 10px;
+  }
+}
+.resource-cover.support-cover {
+    border: 1px solid #a4d8fb;
+    background-color: #edf7fe;
+
+    img {
+      margin: 30px auto;
+      max-width: 75%;
+    }
+}

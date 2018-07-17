@@ -1,0 +1,128 @@
+.page-home {
+  background: url(../img/bg-home.png) #075f99 no-repeat top left;
+  background-size: 100% auto;
+
+  .btn-wrap {
+    position:absolute;
+    bottom:0;
+    width:100%;
+
+    .tag-wrap {
+      .flex-display(flex);
+
+      div {
+        .flex(1 auto);
+        background: #fff;
+      }
+
+      .tag {
+        background: transparent;
+        .flex(0);
+
+        img {
+          display:block;
+          width: 54px;
+          height: auto;
+        }
+      }
+    }
+
+    .home-buttons {
+      .flex-display(flex);
+      .flex-wrap(wrap);
+      .justify-content(space-between);
+      .align-content(space-between);
+      background: #fff;
+      padding: 9vw;
+      padding-top: 6vw;
+    }
+  }
+
+  .brand-container {
+    .flex-display(flex);
+    .justify-content(center);
+    & > div {
+      padding: 0 10px;
+    }
+  }
+}
+
+.btn-home {
+  background: #fff;
+  .border-radius(8px);
+  .box-shadow(2px 2px 5px 0px rgba(0,0,0,0.35));
+  overflow: hidden;
+  width: 35vw;
+  height: 33vw;
+  position: relative;
+  .inner {
+    height: 100%;
+    .flex-display(flex);
+    .flex-direction(column);
+  }
+
+  .icon {
+    .flex-display(flex);
+    .flex-grow(1);
+    .align-items(center);
+    .justify-content(center);
+
+    .fa-barcode {
+      font-size: 17vw;
+    }
+
+    .fa-heart {
+      font-size: 15vw;
+    }
+
+    .fa-cog {
+      font-size: 16vw;
+    }
+
+    .fa-question {
+      font-size: 19vw;
+    }
+  }
+
+  .btn-label {
+    color: #fff;
+    padding:10px;
+    width:100%;
+    font-weight: 700;
+    font-family: 'Roboto Slab', serif;
+    font-size: 17px;
+  }
+
+  &.btn-home-blue {
+    color: #075f99;
+    .btn-label {
+      background-color: #4ba6e2;
+    }
+  }
+
+  &.btn-home-red {
+    color: #ff480a;
+    .btn-label {
+      background-color: #ff480a;
+    }
+  }
+
+  &.btn-home-green {
+    color: #8ac400;
+    .btn-label {
+      background-color: #8ac400;
+    }
+  }
+
+  &.btn-home-yellow {
+    color: #e4a904;
+    .btn-label {
+      background-color: #e4a904;
+    }
+  }
+
+  &.btn-home:nth-child(0),
+  &.btn-home:nth-child(1) {
+    margin-bottom: 9vw;
+  }
+}

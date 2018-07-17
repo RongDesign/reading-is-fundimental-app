@@ -1,0 +1,19 @@
+<div class="modal-add-favorite" ng-controller="modalAddFavoriteCtrl as ctrl" ng-class="{'processing': processing}">
+  <div class="fa fa-close cta-close" ng-click="dismiss({action:'cancel'})"></div>
+  <h2>Add to Favorite List</h2>
+  <form ng-if="favoriteFolders">
+    <div class="custom-select">
+      <select ng-model="ctrl.selectedFolder" ng-change="ctrl.checkResourcesLimit()">
+        <option ng-if="favoriteFolders.length" ng-repeat="folder in favoriteFolders" ng-value="folder" ng-bind-html="folder.title"></option>
+        <option ng-if="!hideCreateNew" ng-value="'new'">Create New List</option>
+      </select>
+    </div>
+    <p class="error-messages" ng-if="ctrl.limit_exceeded ">Adding to the selected list will exceed the allowed limit.</p>
+    <input type="text" name="foldername" ng-model="ctrl.newFolderName" ng-if="ctrl.selectedFolder == 'new'">
+
+    <div class="button-wrap">
+      <button class="btn" type="submit" ng-click="ctrl.addTo(ctrl.selectedFolder)" ng-hide="processing" ng-disabled="(ctrl.selectedFolder == 'new' && !ctrl.newFolderName) || ctrl.limit_exceeded">Add Material</button>
+    </div>
+  </form>
+  <div class="preloader in-line"><div class="spinner"></div></div>
+</div>

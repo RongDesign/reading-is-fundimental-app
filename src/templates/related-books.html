@@ -1,0 +1,15 @@
+<div ng-if="relatedBooksCtrl.books">
+  <h4>Other Books at this Reading Level</h4>
+  <ul>
+    <li ng-repeat="relatedBook in relatedBooksCtrl.books track by $index" class="related-book">
+      <a ui-sref="book({ isbn: relatedBook.isbn })">
+        <img ng-src="{{ relatedBook.image }}" class="img-responsive">
+
+        <div class="text-information">
+          <div class="title" ng-bind-html="relatedBook.title"></div>
+          <div class="author" ng-bind-html="relatedBook.authors"></div>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,47 @@
+<section class="page-favorites" ng-class="{'not-logged-in': !user.loggedIn}">
+  <div class="inner" ng-if="user.loggedIn">
+    <form ng-if="favorites.data.lists.length < 10">
+      <label>Create New List</label>
+      <div class="flex">
+        <input type="text" ng-model="favorites.new_folder_name">
+        <button class="btn btn-create" ng-click="favorites.createFolder()" ng-disabled="!favorites.new_folder_name">Create</button>
+      </div>
+    </form>
+
+    <p class="message-maximum-allowed" ng-if="favorites.data.lists.length >= 10">You have reached the maximum allowed lists.</p>
+    <hr>
+    <h1>My Folders</h1>
+    <ul class="favorites-folder-list">
+      <li class="list-folder-item" ng-repeat="item in favorites.data.lists | orderBy: '-'">
+        <div class="item-top flex">
+          <a class="folder-name" ui-sref="favorites-folder({nid: item.nid, title: item.title})">
+            <span class="fa fa-folder"></span>
+            <span ng-bind-html="item.title"></span>
+          </a>
+          <span class="fa fa-cog" ng-click="favorites.showSettings($event, item)"></span>
+        </div>
+        <div class="item-bottom">{{item.field_favorite_resources.length}} items</div>
+      </li>
+    </ul>
+
+    <form  ng-if="favorites.rename">
+      <div class="flex">
+        <input type="text" ng-model="favorites.rename.folder_name">
+        <button class="btn btn-create" ng-click="favorites.renameFolder(favorites.rename.nid, favorites.rename.folder_name)">Rename</button>
+      </div>
+    </form>
+  </div>
+
+  <div ng-if="!user.loggedIn">
+    <div class="icon"><span class="fa fa-heart"></span></div>
+    <p>You must sign in to view your favorites.</p>
+
+    <hr>
+
+    <div>
+      <button class="btn btn-green" ui-sref="sign-in">Sign In<span class="fa fa-arrow-right"></span></button>
+      <button class="btn btn-blue-light" ui-sref="register">Register<span class="fa fa-arrow-right"></span></button>
+    </div>
+  </div>
+
+</section>

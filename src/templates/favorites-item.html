@@ -1,0 +1,47 @@
+<div class="favorites-item">
+  <div class="inner">
+    <div class="book-item flex">
+      <a ui-sref="book({isbn:book.isbn})">
+        <div class="book-image">
+          <img class="img-responsive" ng-src="{{book.image}}" >
+        </div>
+      </a>
+
+      <div class="book-description">
+        <h2 ng-bind-html="book.title"></h2>
+        <h3 data-contributors data-authors="book.authors" data-illustrators="book.illustrators"></h3>
+      </div>
+
+      <div class="expand-arrow" ng-if="supportMaterials.length" ng-click="favoriteCtrl.toggleSupportMaterials()">
+        <span class="fa fa-angle-down"></span>
+        <span class="fa fa-angle-up"></span>
+      </div>
+
+      <div class="cta-remove" ng-click="favoriteCtrl.remove(book)"><span class="fa fa-trash"></span></div>
+    </div>
+
+    <div class="collapse" ng-if="supportMaterials.length">
+
+      <div class="support-materials">
+        <div class="view-content">
+            <div ng-repeat="supportMaterial in supportMaterials" class="support-material-item clearfix">
+
+                <a ui-sref="support-material({nid:supportMaterial.nid})">
+                    <div class="col-xs-2 col-sm-1 col-md-1 icon">
+                        <img class="img-responsive" ng-src="{{ supportMaterial.icon }}">
+                    </div>
+                    <div class="col-xs-10 col-sm-8 col-md-7 text">
+                        <h4 ng-bind-html="supportMaterial.title"></h4>
+                        <p ng-bind-html="supportMaterial.description"></p>
+                    </div>
+                </a>
+                <div class="col-xs-12 col-sm-3 col-md-4 button">
+                    <button class="btn btn-blue" ng-click="favoriteCtrl.remove(supportMaterial)">Remove<span class="fa fa-close"></button>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

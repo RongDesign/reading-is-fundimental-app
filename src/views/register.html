@@ -1,0 +1,224 @@
+<section class="page-form">
+  <form ng-submit="registration.submit(registration.data)">
+    <h1>Register</h1>
+    <hr>
+    <ul class="input-wrap">
+      <li>
+        <label>First Name</label>
+        <input type="text" name="first_name" ng-model="registration.data.first_name"></input>
+      </li>
+      <li>
+        <label>Last Name</label>
+        <input type="text" name="last_name" ng-model="registration.data.last_name"></input>
+      </li>
+      <li>
+        <label>Username</label>
+        <input type="text" name="username" ng-model="registration.data.username"></input>
+      </li>
+      <li>
+        <label>Email Address</label>
+        <input type="text" name="email" ng-model="registration.data.email"></input>
+      </li>
+      <li>
+        <label>Create Password</label>
+        <input type="password" name="password" ng-model="registration.data.password"></input>
+      </li>
+      <li>
+        <label>Confirm Password</label>
+        <input type="password" name="confirm_password" ng-model="registration.data.confirm_password"></input>
+      </li>
+      <li>
+        <label>Address 1</label>
+        <input type="text" name="address_line_1" ng-model="registration.data.address_line_1"></input>
+      </li>
+      <li>
+        <label>Address 2</label>
+        <input type="text" name="address_line_2" ng-model="registration.data.address_line_2"></input>
+      </li>
+    </ul>
+    <ul class="input-wrap two-column">
+      <li>
+        <label>State</label>
+        <div class="custom-select">
+          <select name="state" ng-model="registration.data.state">
+            <option></option>
+            <option value="alabama">Alabama</option>
+            <option value="alaska">Alaska</option>
+            <option value="american_samoa">American Samoa</option>
+            <option value="arizona">Arizona</option>
+            <option value="arkansas">Arkansas</option>
+            <option value="california">California</option>
+            <option value="colorado">Colorado</option>
+            <option value="connecticut">Connecticut</option>
+            <option value="delaware">Delaware</option>
+            <option value="dist_of_columbia">Dist of Columbia</option>
+            <option value="federated_states_of_micronesia">Federated States of Micronesia</option>
+            <option value="florida">Florida</option>
+            <option value="georgia">Georgia</option>
+            <option value="guam">Guam</option>
+            <option value="hawaii">Hawaii</option>
+            <option value="idaho">Idaho</option>
+            <option value="illinois">Illinois</option>
+            <option value="indiana">Indiana</option>
+            <option value="iowa">Iowa</option>
+            <option value="kansas">Kansas</option>
+            <option value="kentucky">Kentucky</option>
+            <option value="louisiana">Louisiana</option>
+            <option value="maine">Maine</option>
+            <option value="marshall_islands">Marshall Islands</option>
+            <option value="maryland">Maryland</option>
+            <option value="massachusetts">Massachusetts</option>
+            <option value="michigan">Michigan</option>
+            <option value="minnesota">Minnesota</option>
+            <option value="mississippi">Mississippi</option>
+            <option value="missouri">Missouri</option>
+            <option value="montana">Montana</option>
+            <option value="nebraska">Nebraska</option>
+            <option value="nevada">Nevada</option>
+            <option value="new_hampshire">New Hampshire</option>
+            <option value="new_jersey">New Jersey</option>
+            <option value="new_mexico">New Mexico</option>
+            <option value="new_york">New York</option>
+            <option value="north_carolina">North Carolina</option>
+            <option value="north_dakota">North Dakota</option>
+            <option value="northern_mariana_islands">Northern Mariana Islands</option>
+            <option value="ohio">Ohio</option>
+            <option value="oklahoma">Oklahoma</option>
+            <option value="oregon">Oregon</option>
+            <option value="palau">Palau</option>
+            <option value="pennsylvania">Pennsylvania</option>
+            <option value="puerto_rico">Puerto Rico</option>
+            <option value="rhode_island">Rhode Island</option>
+            <option value="south_carolina">South Carolina</option>
+            <option value="south_dakota">South Dakota</option>
+            <option value="tennessee">Tennessee</option>
+            <option value="texas">Texas</option>
+            <option value="utah">Utah</option>
+            <option value="vermont">Vermont</option>
+            <option value="virginia">Virginia</option>
+            <option value="washington">Washington</option>
+            <option value="west_virginia">West Virginia</option>
+            <option value="wisconsin">Wisconsin</option>
+            <option value="wyoming">Wyoming</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+      </li>
+      <li>
+        <label>Zip</label>
+        <input type="text" name="zip" ng-model="registration.data.zip"></input>
+      </li>
+    </ul>
+    <ul class="input-wrap">
+      <li>
+        <label>Account Type</label>
+        <div class="custom-select">
+          <select name="accountType" ng-model="registration.data.account_type">
+            <option></option>
+            <option>Educator</option>
+            <option>Parent</option>
+            <option>Teacher</option>
+          </select>
+        </div>
+      </li>
+      <li>
+        <label>School Affiliation</label>
+        <input type="text" name="school_affiliation" ng-model="registration.data.school_affiliation"></input>
+      </li>
+      <li>
+        <label>Affiliation RIF site</label>
+        <input type="text" name="site_affiliation" ng-model="registration.data.site_affiliation"></input>
+      </li>
+      <li>
+        <label>Grade Level</label>
+        <div class="custom-select">
+          <select name="grade_level"  ng-model="registration.data.grade_level">
+            <option></option>
+            <option>Pre-K</option>
+            <option>K-6</option>
+            <option>6-12</option>
+          </select>
+        </div>
+      </li>
+    </ul>
+
+    <h2>Areas of Interest</h2>
+    <hr>
+    <ul class="input-wrap checkbox-wrap two-column">
+      <li>
+        <input id="cb1" type="checkbox" name="interest" value="picture_books" />
+        <label for="cb1">Picture Books</label>
+      </li>
+      <li>
+        <input id="cb2" type="checkbox" name="interest" value="ebooks" />
+        <label for="cb2" >eBooks</label>
+      </li>
+      <li>
+        <input id="cb3" type="checkbox" name="interest" value="activity_lesson_plans" />
+        <label for="cb3" >Activity/Lesson Plans</label>
+      </li>
+      <li>
+        <input id="cb4" type="checkbox" name="interest" value="games" />
+        <label for="cb4" >Games</label>
+      </li>
+      <li>
+        <input id="cb5" type="checkbox" name="interest" value="bilingual" />
+        <label for="cb5" >Bilingual</label>
+      </li>
+      <li>
+        <input id="cb6" type="checkbox" name="interest" value="arts" />
+        <label for="cb6" >Arts</label>
+      </li>
+      <li>
+        <input id="cb7" type="checkbox" name="interest" value="arts" />
+        <label for="cb7" >Special Needs</label>
+      </li>
+      <li>
+        <input id="cb8" type="checkbox" name="interest" value="arts" />
+        <label for="cb8" >STEM</label>
+      </li>
+      <li>
+        <input id="cb9" type="checkbox" name="interest" value="arts" />
+        <label for="cb9" >Poetry</label>
+      </li>
+      <li>
+        <input id="cb10" type="checkbox" name="interest" value="arts" />
+        <label for="cb10" >Videos</label>
+      </li>
+      <li>
+        <input id="cb11" type="checkbox" name="interest" value="arts" />
+        <label for="cb11" >Professional Development</label>
+      </li>
+      <li>
+        <input id="cb12" type="checkbox" name="interest" value="arts" />
+        <label for="cb12" >Assessment To</label>
+      </li>
+      <li>
+        <input id="other" type="checkbox" name="interest" value="arts" />
+        <label for="other">Other</label>
+      </li>
+    </ul>
+
+    <h2>Keep In Touch</h2>
+    <hr>
+    <ul class="input-wrap checkbox-wrap">
+      <li>
+        <input id="cb13" type="checkbox" name="newsletters" value="rif" />
+        <label for="cb13">Get the Rif.org Newsletter</label>
+      </li>
+      <li>
+        <input id="cb14" type="checkbox" name="newsletters" value="literacy_central" />
+        <label for="cb14">Get the Literacy Central Newsletter</label>
+      </li>
+      <li>
+        <input id="cb15" type="checkbox" name="newsletters" value="literacy_network" />
+        <label for="cb15">Get the Literacy Network Newsletter</label>
+      </li>
+    </ul>
+    <hr>
+    <div class="btn-wrap">
+      <button class="btn btn-green" type="submit" value="submit">Submit</span></button>
+      <a onclick="history.back()" class="btn btn-blue">Cancel</a>
+    </div>
+  </form>
+</section>

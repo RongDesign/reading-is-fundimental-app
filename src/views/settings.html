@@ -1,0 +1,11 @@
+<section class="page-settings">
+  <ul>
+    <li ng-if="!user.loggedIn">
+      <a ui-sref="sign-in">Sign In</a>
+    </li>
+    <li ng-if="user.loggedIn">
+      <a ui-sref="sign-out">Sign Out</a>
+    </li>
+  </ul>
+
+</section>

@@ -1,0 +1,65 @@
+<section class="page-support-material">
+
+  <div class="row">
+    <!-- ---------------- -->
+    <!-- Resource Cover   -->
+    <!-- ---------------- -->
+    <div class="resource-cover support-cover">
+      <img class="img-responsive" ng-src="{{ supportMaterial.data.icon }}">
+    </div>
+
+
+    <p class="more-info" ng-if="!supportMaterial.data.file">This support material is best viewed on a tablet or computer.</p>
+
+    <!-- ---------------- -->
+    <!-- Buttons          -->
+    <!-- ---------------- -->
+    <div class="button-container support-material-options">
+        <a ng-if="supportMaterial.data.file" ng-href="{{ supportMaterial.data.file }}" target="_blank" ng-click="supportMaterial.launchPDF($event)" type="button" class="btn btn-green">
+          Download PDF <i class="fa fa-download"></i>
+        </a>
+        <button type="button" class="btn btn-yellow-dark" ng-click="supportMaterial.addFavorite($event, supportMaterial.data)">Add To My Favorites <i class="fa" ng-class="{'fa-heart-o': !supportMaterial.addedFavorite, 'fa-heart': supportMaterial.addedFavorite}"></i></button>
+
+    </div>
+
+
+
+    <div class="resource-description">
+
+      <h1 ng-bind-html="supportMaterial.data.title"></h1>
+      <p ng-bind-html="supportMaterial.data.description"></p>
+
+      <h2>Resource Information</h2>
+
+      <div class="resource-information">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <table class="table">
+              <tbody>
+                <tr ng-if="supportMaterial.data.ageRange">
+                  <td class="col-xs-4">Age Range</td>
+                  <td class="col-xs-8" ng-bind-html="supportMaterial.data.ageRange"></td>
+                </tr>
+                <tr ng-if="supportMaterial.data.keywords">
+                  <td class="col-xs-4">Keywords</td>
+                  <td class="col-xs-8" ng-bind-html="supportMaterial.data.keywords"></td>
+                </tr>
+                <tr ng-if="supportMaterial.data.literacy_standards.length">
+                  <td class="col-xs-4">Literacy Standards</td>
+                  <td class="col-xs-8">
+                    <p ng-repeat="standard in supportMaterial.data.literacy_standards track by $index">{{ standard.title + ' ' + standard.description }}</p>
+                  </td>
+                </tr>
+                <tr ng-if="supportMaterial.data.lexile">
+                  <td class="col-xs-4">Lexile</td>
+                  <td class="col-xs-8" ng-bind-html="supportMaterial.data.lexile"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,24 @@
+<section class="page-scan">
+  <div class="icon"><span class="fa fa-barcode"></span></div>
+  <div class="inner">
+    <button class="btn btn-green" ng-click="scan.scan()">Scan your ISBN</button>
+    <div ng-show="scan.detectedResults.error">
+      <p>Your camera is currently not accessible.</p>
+      <p>Enter the book's ISBN number by selecting "Enter ISBN Manually".</p>
+    </div>
+    <div class="seperator">
+      <div class="line"></div>
+      <div class="text">or</div>
+      <div class="line"></div>
+    </div>
+    <button class="btn btn-green" ui-sref="enter-isbn">Enter ISBN Manually</button>
+
+    <ul>
+      <li><a ui-sref="results({ isbn: scan.luckyIsbn })">I'm Feeling Lucky</a></li>
+      <li>
+        <a href="{{ scan.websiteUrl }}" target="_blank" ng-click="scan.launchWebsite($event)">Literacy Central Website</a>
+        <p>Search for more books and resources on Literacy Central.</p>
+      </li>
+    </ul>
+  </div>
+</section>

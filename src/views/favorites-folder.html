@@ -1,0 +1,12 @@
+<section class="page-favorites-folder-contents">
+  <div class="inner">
+    <h1><span class="fa fa-folder"></span><span ng-bind-html="favoritesFolder.title"></span></h1>
+    <hr>
+    <ul class="favorites-list">
+      <li
+        ng-repeat="book in favoritesFolder.books track by $index"
+        data-favorites-item="book"
+        data-support-materials="favoritesFolder.bookSupportMaterials[book.nid]"></li>
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,13 @@
+<div class="modal-folder-settings" ng-controller="modalFolderSettinsCtrl as ctrl">
+  <div class="fa fa-close cta-close" ng-click="dismiss({action:'cancel'})"></div>
+  <h2>Folder Settings</h2>
+  <form>
+    <label>Name</label>
+    <input type="text" ng-model="ctrl.folder.title"></input>
+    <div class="button-wrap">
+      <button class="btn btn-blue-dark" ng-click="ctrl.rename()" ng-disabled="!ctrl.folder.title">Rename</button>
+      <hr>
+      <button type="button" class="btn btn-red" ng-click="ctrl.delete()">Delete</button>
+    </div>
+  </form>
+</div>

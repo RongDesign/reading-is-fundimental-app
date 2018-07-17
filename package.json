@@ -1,0 +1,17 @@
+{
+  "name": "org.rif.literacycentral",
+  "description": "Literacy Central",
+  "version": "1.0.0",
+  "private": true,
+  "config": {
+    "cordova": {
+      "version": {
+        "name": "1.0",
+        "code": "13"
+      }
+    }
+  },
+  "dependencies": {
+    "grunt-jplapp": "http://npm.jplcreative.linux.dev/packages/grunt-jplapp-6.0.0.tgz"
+  }
+}

@@ -1,0 +1,91 @@
+header {
+  background: #075f99;
+  height: 50px;
+  position: fixed;
+  width:100vw;
+  z-index:1;
+
+  .title {
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 50px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+  .back-btn {
+    position:absolute;
+    left:0;
+    top:0;
+    width: 50px;
+    height: 50px;
+    text-indent: 100%;
+  }
+  .back-btn:before {
+    position:absolute;
+    left:0;
+    top:0;
+    text-indent: 0;
+    color: #fff;
+    line-height: 50px;
+    font-size: 26px;
+    text-align: center;
+    width:100%;
+  }
+}
+
+
+footer {
+  width: 100vw;
+  height: 60px;
+  background: #075f99;
+  padding: 10px 16px;
+  position:fixed;
+  bottom:0;
+  .flex-display();
+  .justify-content(space-between);
+
+  button {
+    .border-radius (3px);
+    background: #1073b4;
+    color: #fff;
+    overflow:hidden;
+    width: 45px;
+    padding: 0;
+    position:relative;
+
+    &.fa-home {
+      font-size: 31px;
+    }
+
+    &.fa-barcode {
+      font-size: 27px;
+    }
+
+    &.fa-heart {
+      font-size: 26px;
+    }
+
+    &.fa-cog {
+      font-size: 26px;
+    }
+
+    &.fa-question {
+      font-size: 31px;
+    }
+
+    span {
+      display: none;
+    }
+
+    .flex-display();
+    .justify-content(center);
+    .align-content(center);
+  }
+
+  button:before {
+    text-indent: 0;
+    width: 100%;
+    text-align: center;
+  }
+}

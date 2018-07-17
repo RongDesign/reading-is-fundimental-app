@@ -1,0 +1,55 @@
+.search-results-wrap {
+  padding: 15px 30px;
+}
+
+.book-cover {
+  max-width: 75%;
+  max-height: 60vw;
+  .border-radius(5px);
+}
+
+.book-lexile {
+  font-size: 14px;
+  color: #545454;
+  font-weight: 900;
+}
+
+.book-not-found {
+  background: #ebf5fc;
+  .border-radius(6px);
+
+  .inner {
+    padding: 35px 20px;
+    @media (min-width: 400px) {
+      padding: 45px;
+    }
+  }
+
+  h1 {
+    color: #075f99;
+    font-size: 21px;
+    font-weight: 900;
+  }
+
+  p {
+    padding: 15px 0 25px;
+    font-size: 14px;
+    line-height: 1.2em;
+  }
+}
+
+.suggestion-list {
+  padding: 0 20px;
+
+  a {
+    text-decoration: none;
+  }
+
+  & > li + li {
+    border-top: 1px solid #e1e1e1;
+  }
+
+  .book-item {
+    margin: 15px 0;
+  }
+}
